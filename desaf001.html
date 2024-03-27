@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index.html</title>
+    <script>
+        function main() {
+            nome=parseInt(prompt("Digite data modo AAAAMMDD")); 
+            console.log (dia+mes+ano); 
+            ano=parseInt(data/10000);
+            mes=parseInt(data%10000/100);
+            dia=data%100;
+            console.log(dia+"/"+mes+"/"+ano);
+            if(mes<=9) {
+                if(dia<=9) {
+                    console.log("0"+dia+"/0"+mes+"/"+ano);
+                }
+                else {
+                    console.log(+dia+"/0"+mes+"/"+ano);   
+                }
+                if(dia<=9) {
+                    console.log("0"+dia+"/"+mes+"/"+ano);
+                }
+                else {
+                    console.log(dia+"/"+mes+"/"+ano);
+                }
+                console.log(dia+"/0"+mes+"/"+ano);
+            }
+            else {
+                console.log(dia+"/"+mes+"/"+ano);  
+            }
+        }
+ 
+    </script>
+</head>
+<body onload="main()">  
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index.html</title>
+    <script>
+        function main() {
+            nome=prompt("Digite um nome"); 
+            console.log (nome);
+            console.log(nome[0]);                    // char(nome,0)
+            console.log(nome.length);                // len(nome)
+            console.log(nome[nome.length-1]);
+            console.log(nome[0]+nome[1]+nome[2]);
+            console.log(nome[3]);
+            nome1=inv_str(nome);
+            console.log(nome1); 
+
+        }
+    function inv_str(str) {
+        inv_str="";
+        for(i=str.length-1;i>=0;i--) {              // i=i-1
+        inv_str+=str[i];                              //nome1=nome1+nome[-1]
+        }
+        return inv_str;
+    }
+
+ 
+    </script>
+</head>
+<body onload="main()">  
+</body>
+</html>

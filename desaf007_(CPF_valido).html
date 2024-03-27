@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index.html</title>
+    <script>
+        function main() {
+            cpf=prompt("Digite o CPF"); // 66755631736
+            cpf1="";
+            soma=0;
+            for(i=0;i<cpf.length;i++) {
+                if(i==cpf.length-1) {
+                    cpf1+=cpf[i];
+                }
+                else {
+                    cpf1+= cpf[i]+" - ";                  // cpf1 = cpf1 + cpf[i]
+                } 
+                if(i<9) {
+                    soma+= (10-i)*parseInt(cpf[i]);
+                }
+ 
+            }
+            dv1= 11-(soma%11);
+            console.log(cpf);
+            console.log(cpf1);
+            console.log(soma);
+            console.log(dv1)
+            if(parseInt(cpf[9]!=dv1)) {
+                alert("CPF invalido!");
+            }
+            else {
+            soma=0;
+            for(i=0;i<cpf.length;i++) {
+                if(i<10) {
+                    soma+= (11-i)*parseInt(cpf[i]);
+                }
+ 
+            }
+        }
+        console.log(soma);
+        dv2= 11-(soma%11);
+        if(dv2!=parseInt(cpf[10])) {
+            alert("CPF invalido")
+        }
+        else {
+            alert("CPF válido")
+        }
+        }
+
+
+        
+
+ 
+    </script>
+</head>
+<body onload="main()">  
+</body>
+</html>

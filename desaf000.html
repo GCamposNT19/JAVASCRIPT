@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index.html</title>
+    <script>
+        function main() {
+            a=parseInt(prompt("Digite a data em modo AAAAMMDD:")); // (parseInt) entra um conjunto e caracteres e retorna em um numero
+            console.log(ano(a,b)); // (console)ver o que a veriavel tem 
+            console.log(somaquad(a,b));  
+        }
+        function ano(a) {
+            return a/10000;
+        }
+        function mes(a) {
+            return (a/100)%100
+        }
+        function dia(a) {
+            return a/100
+        }
+    </script>
+</head>
+<body onload="main()">  
+</body>
+</html>

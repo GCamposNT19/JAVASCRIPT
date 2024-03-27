@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index.html</title>
+    <script>
+        function main() {
+            // 11.111.111/0001- -- Exemplo
+            // 1 1 1 1 1 1 1 1 0 0 0 1 - numeros
+            // 5 4 3 2 9 8 7 6 5 4 3 2 
+            //05+04+03+02+09+08+07+06+00+00+00+02=46
+            //46%11=2 11-2=9
+            // 11.111.111/0001-9
+            // 1 1 1 1 1 1 1 1 0 0 0 1 9
+            // 6 5 4 3 2 9 8 7 6 5 4 3 2
+            //05+04+03+02+09+08+07+06+00+00+00+03+18=65
+            //65%11=10 11-10=1
+            // 11.111.111/0001-91
+
+
+           cnpj=prompt("Digite o CNPJ");
+            // cnpj="11111111000191";
+            cnpj1="";
+            soma=0;
+            n=5
+            for(i=0;i<cnpj.length;i++) { 
+                if(i<12) {
+                    if((n-i)==1) {
+                        n=13;
+                    }
+                    soma+=(n-i)*parseInt(cnpj[i]);
+                }
+ 
+            }
+            console.log(soma); // 46
+            dv1= 11-(soma%11);
+            if(dv1>9) {
+                dv1=0;
+            }
+            console.log(dv1);
+            if(parseInt(cnpj[12]!=dv1)) {
+                alert("CNPJ invalido!");
+            }
+            else {
+            soma=0;
+            n=6;
+            for(i=0;i<cnpj.length;i++) {
+                if((n-i)==1){
+                    n=14;
+                }
+                if(i<13) {
+                    soma+= (n-i)*parseInt(cnpj[i]);
+                }
+ 
+            }
+        }
+        console.log(soma);  // 65
+        dv2= 11-(soma%11);
+        if(dv2>9) {
+            dv2=0;
+        }
+        console.log(dv2);
+
+        if(dv2!=parseInt(cnpj[13])) {
+            alert("CNPJ invalido")
+        }
+        else {
+            alert("CNPJ válido")
+        }
+        }
+
+
+        
+
+ 
+    </script>
+</head>
+<body onload="main()">  
+</body>
+</html>
